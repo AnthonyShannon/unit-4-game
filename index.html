@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Super awesome game</title>
+    <title>Legend of Zelda Battle Arena</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -14,7 +14,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Role Playing Game</h1>
+            <h1 class="display-4">Legend of Zelda Battle Arena</h1>
             <p class="lead">Select the character you would like to battle for you!</p>
         </div>
     </div>
@@ -22,41 +22,101 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="card" style="width: 140px;">
-                    <img src="https://via.placeholder.com/140x100" class="card-img-top" alt="placeholder">
+                <div class="card" id="link" style="width: 140px;">
+                    <img src="./assets/images/Link.jpg" class="card-img-top" alt="Link">
                     <div class="card-body">
-                        <p class="card-text">character name</p>
+                        <p class="card-text">Link</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" style="width: 140px;">
-                    <img src="https://via.placeholder.com/140x100" class="card-img-top" alt="placeholder">
+                <div class="card" id="sheik" style="width: 140px;">
+                    <img src="./assets/images/sheik.png" class="card-img-top" alt="Sheik">
                     <div class="card-body">
-                        <p class="card-text">character name</p>
+                        <p class="card-text">Sheik</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" style="width: 140px;">
-                    <img src="https://via.placeholder.com/140x100" class="card-img-top" alt="placeholder">
+                <div class="card" id="mikau" style="width: 140px;">
+                    <img src="./assets/images/mikau.jpg" class="card-img-top" alt="Mikau">
                     <div class="card-body">
-                        <p class="card-text">character name</p>
+                        <p class="card-text">Mikau</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" style="width: 140px;">
-                    <img src="https://via.placeholder.com/140x100" class="card-img-top" alt="placeholder">
+                <div class="card" id="bublin" style="width: 140px;">
+                    <img src="./assets/images/king-bublin.jpg" class="card-img-top" alt="bublin">
                     <div class="card-body">
-                        <p class="card-text">character name</p>
+                        <p class="card-text">King Bublin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container battle-area"> 
+        <div class="row">
+            <div class="col-md-6 battleArea">
+                <h3>Battle Area</h3>
+                <div class="card" id="linkAttack" style="width: 140px;">
+                    <img src="./assets/images/Link.jpg" class="card-img-top" alt="Link">
+                    <div class="card-body">
+                        <p class="card-text">Link</p>
+                    </div>
+                </div>
+                <div class="card" id="sheikAttack" style="width: 140px;">
+                    <img src="./assets/images/sheik.png" class="card-img-top" alt="Sheik">
+                    <div class="card-body">
+                        <p class="card-text">Sheik</p>
+                    </div>
+                </div>
+                <div class="card" id="mikauAttack" style="width: 140px;">
+                    <img src="./assets/images/mikau.jpg" class="card-img-top" alt="Mikau">
+                    <div class="card-body">
+                        <p class="card-text">Mikau</p>
+                    </div>
+                </div>
+                <div class="card" id="bublinAttack" style="width: 140px;">
+                    <img src="./assets/images/king-bublin.jpg" class="card-img-top" alt="bublin">
+                    <div class="card-body">
+                        <p class="card-text">King Bublin</p>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-dark" id="attack-btn">Attack</button>
+                <button type="button" class="btn btn-success" id="clear-btn">Clear</button>
+            </div>
+            <div class="col-md-6 defenderArea">
+                <h3>Defender</h3>
+                <div class="card" id="linkDefend" style="width: 140px;">
+                    <img src="./assets/images/Link.jpg" class="card-img-top" alt="Link">
+                    <div class="card-body">
+                        <p class="card-text">Link</p>
+                    </div>
+                </div>
+                <div class="card" id="sheikDefend" style="width: 140px;">
+                    <img src="./assets/images/sheik.png" class="card-img-top" alt="Sheik">
+                    <div class="card-body">
+                        <p class="card-text">Sheik</p>
+                    </div>
+                </div>
+                <div class="card" id="mikauDefend" style="width: 140px;">
+                    <img src="./assets/images/mikau.jpg" class="card-img-top" alt="Mikau">
+                    <div class="card-body">
+                        <p class="card-text">Mikau</p>
+                    </div>
+                </div>
+                <div class="card" id="bublinDefend" style="width: 140px;">
+                    <img src="./assets/images/king-bublin.jpg" class="card-img-top" alt="bublin">
+                    <div class="card-body">
+                        <p class="card-text">King Bublin</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    s
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -66,6 +126,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
