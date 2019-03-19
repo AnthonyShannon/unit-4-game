@@ -1,4 +1,3 @@
-// Define variables (hp, ap, and counter attack power)
 $('#attack-btn').hide();
 $('#clear-btn').hide();
 $('#linkAttack').hide();
@@ -10,6 +9,7 @@ $('#mikauDefend').hide();
 $('#bublinAttack').hide();
 $('#bublinDefend').hide();
 
+// Define variables (hp, ap, and counter attack power)
 // Set characters as objects
 var link = { hp: 100, ap: 8, counterAttackPower: 10 };
 var sheik = { hp: 120, ap: 10, counterAttackPower: 8 };
@@ -22,12 +22,17 @@ $("#link").click(function () {
     $("#linkAttack").show();
     $("#linkHealth").html("Health: " + link.hp);
     $(".lead").html("Select an opponent!");
+    $("#attack-btn").show();
     $("#sheik").click(function () {
         $(this).hide();
         $("#sheikDefend").show();
         $("#sheikAttack").hide();
         $("#sheikDefHealth").html("Health: " + sheik.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            sheik.hp = sheik.hp - link.ap;
+            $("#sheikDefHealth").html("Health: " + sheik.hp);
+        });
     });
     $("#bublin").click(function () {
         $(this).hide();
@@ -35,6 +40,10 @@ $("#link").click(function () {
         $("#bublinAttack").hide();
         $("#bublinDefHealth").html("Health: " + kingBublin.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            kingBublin.hp = kingBublin.hp - link.ap;
+            $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+        });
     });
     $("#mikau").click(function () {
         $(this).hide();
@@ -42,20 +51,28 @@ $("#link").click(function () {
         $("#mikauAttack").hide();
         $("#mikauDefHealth").html("Health: " + mikau.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            mikau.hp = mikau.hp - link.ap;
+            $("#mikauDefHealth").html("Health: " + mikau.hp);
+        });
     });
-    $("#attack-btn").show();
 });
 $("#sheik").click(function () {
     $(this).hide();
     $("#sheikAttack").show();
     $("#sheikHealth").html("Health: " + sheik.hp);
     $(".lead").html("Select an opponent!");
+    $("#attack-btn").show();
     $("#link").click(function () {
         $(this).hide();
         $("#linkDefend").show();
         $("#linkAttack").hide();
         $("#linkDefHealth").html("Health: " + link.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            link.hp = link.hp - sheik.ap;
+            $("#linkDefHealth").html("Health: " + link.hp);
+        });
     });
     $("#bublin").click(function () {
         $(this).hide();
@@ -63,6 +80,10 @@ $("#sheik").click(function () {
         $("#bublinAttack").hide();
         $("#bublinDefHealth").html("Health: " + kingBublin.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            kingBublin.hp = kingBublin.hp - sheik.ap;
+            $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+        });
     });
     $("#mikau").click(function () {
         $(this).hide();
@@ -70,20 +91,28 @@ $("#sheik").click(function () {
         $("#mikauAttack").hide();
         $("#mikauDefHealth").html("Health: " + mikau.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            mikau.hp = mikau.hp - sheik.ap;
+            $("#mikauDefHealth").html("Health: " + mikau.hp);
+        });
     });
-    $("#attack-btn").show();
 });
 $("#mikau").click(function () {
     $(this).hide();
     $("#mikauAttack").show();
     $("#mikauHealth").html("Health: " + mikau.hp);
     $(".lead").html("Select an opponent!");
+    $("#attack-btn").show();
     $("#sheik").click(function () {
         $(this).hide();
         $("#sheikDefend").show();
         $("#sheikAttack").hide();
         $("#sheikDefHealth").html("Health: " + sheik.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            sheik.hp = sheik.hp - mikau.ap;
+            $("#sheikDefHealth").html("Health: " + sheik.hp);
+        });
     });
     $("#link").click(function () {
         $(this).hide();
@@ -91,6 +120,10 @@ $("#mikau").click(function () {
         $("#linkAttack").hide();
         $("#linkDefHealth").html("Health: " + link.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            link.hp = link.hp - mikau.ap;
+            $("#linkDefHealth").html("Health: " + link.hp);
+        });
     });
     $("#bublin").click(function () {
         $(this).hide();
@@ -98,20 +131,28 @@ $("#mikau").click(function () {
         $("#bublinAttack").hide();
         $("#bublinDefHealth").html("Health: " + kingBublin.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            kingBublin.hp = kingBublin.hp - mikau.ap;
+            $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+        });
     });
-    $("#attack-btn").show();
 });
 $("#bublin").click(function () {
     $(this).hide();
     $("#bublinAttack").show();
     $("#bublinHealth").html("Health: " + kingBublin.hp);
     $(".lead").html("Select an opponent!");
+    $("#attack-btn").show();
     $("#sheik").click(function () {
         $(this).hide();
         $("#sheikDefend").show();
         $("#sheikAttack").hide();
         $("#sheikDefHealth").html("Health: " + sheik.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            sheik.hp = sheik.hp - kingBublin.ap;
+            $("#sheikDefHealth").html("Health: " + sheik.hp);
+        });
     });
     $("#link").click(function () {
         $(this).hide();
@@ -119,6 +160,10 @@ $("#bublin").click(function () {
         $("#linkAttack").hide();
         $("#linkDefHealth").html("Health: " + link.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            link.hp = link.hp - kingBublin.ap;
+            $("#linkDefHealth").html("Health: " + link.hp);
+        });
     });
     $("#mikau").click(function () {
         $(this).hide();
@@ -126,8 +171,11 @@ $("#bublin").click(function () {
         $("#mikauAttack").hide();
         $("#mikauDefHealth").html("Health: " + mikau.hp);
         $(".lead").html("FIGHT!");
+        $("#attack-btn").click(function() {
+            mikau.hp = mikau.hp - kingBublin.ap;
+            $("#mikauDefHealth").html("Health: " + mikau.hp);
+        });
     });
-    $("#attack-btn").show();
 });
 
 // assign an attack button feature to subract players attack power form their hp
