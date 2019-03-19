@@ -31,7 +31,19 @@ $("#link").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             sheik.hp = sheik.hp - link.ap;
+            link.ap = link.ap + 8;
             $("#sheikDefHealth").html("Health: " + sheik.hp);
+        if (sheik.hp <= 0) {
+            $("#sheikDefend").hide(); 
+            sheik.ap = 0;
+        } else {
+            link.hp = link.hp - sheik.ap;
+            $("#linkHealth").html("Health: " + link.hp);
+        }
+        if (link.hp <= 0) {
+            $("#linkHealth").html("LOSER!");
+            $("#clear-btn").show();
+        }
         });
     });
     $("#bublin").click(function () {
@@ -42,7 +54,19 @@ $("#link").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             kingBublin.hp = kingBublin.hp - link.ap;
+            link.ap = link.ap + 8;
             $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+            if (kingBublin.hp <= 0) {
+                $("#bublinDefend").hide();
+                kingBublin.ap = 0; 
+            } else {
+                link.hp = link.hp - kingBublin.ap;
+                $("#linkHealth").html("Health: " + link.hp);
+            }
+            if (link.hp <= 0) {
+                $("#linkHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#mikau").click(function () {
@@ -53,7 +77,19 @@ $("#link").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             mikau.hp = mikau.hp - link.ap;
+            link.ap = link.ap + 8;
             $("#mikauDefHealth").html("Health: " + mikau.hp);
+            if (mikau.hp <= 0) {
+                $("#mikauDefend").hide(); 
+                mikau.ap = 0
+            } else {
+                link.hp = link.hp - mikau.ap;
+                $("#linkHealth").html("Health: " + link.hp);
+            }
+            if (link.hp <= 0) {
+                $("#linkHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
 });
@@ -71,7 +107,19 @@ $("#sheik").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             link.hp = link.hp - sheik.ap;
+            sheik.ap = sheik.ap + 10;
             $("#linkDefHealth").html("Health: " + link.hp);
+            if (link.hp <= 0) {
+                $("#linkDefend").hide();
+                linkk.ap = 0;
+            } else {
+                sheik.hp = sheik.hp - link.ap;
+                $("#sheikHealth").html("Health: " + sheik.hp);
+            }
+            if (sheik.hp <= 0) {
+                $("#sheikHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#bublin").click(function () {
@@ -82,7 +130,19 @@ $("#sheik").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             kingBublin.hp = kingBublin.hp - sheik.ap;
+            sheik.ap = sheik.ap + 10;
             $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+            if (kingBublin.hp <= 0) {
+                $("#bublinDefend").hide();
+                bublin.ap = 0;
+            } else {
+                sheik.hp = sheik.hp - kingBublin.ap;
+                $("#sheikHealth").html("Health: " + sheik.hp);
+            }
+            if (sheik.hp <= 0) {
+                $("#sheikHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#mikau").click(function () {
@@ -93,7 +153,19 @@ $("#sheik").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             mikau.hp = mikau.hp - sheik.ap;
+            sheik.ap = sheik.ap + 10;
             $("#mikauDefHealth").html("Health: " + mikau.hp);
+            if (mikau.hp <= 0) {
+                $("#mikauDefend").hide();
+                mikau.ap = 0;
+            } else {
+                sheik.hp = sheik.hp - mikau.ap;
+                $("#sheikHealth").html("Health: " + sheik.hp);
+            }
+            if (sheik.hp <= 0) {
+                $("#sheikHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
 });
@@ -111,7 +183,19 @@ $("#mikau").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             sheik.hp = sheik.hp - mikau.ap;
+            mikau.ap = mikau.ap + 7;
             $("#sheikDefHealth").html("Health: " + sheik.hp);
+            if (sheik.hp <= 0) {
+                $("#sheikDefend").hide(); 
+                sheik.ap = 0;
+            } else {
+                mikau.hp = mikau.hp - sheik.ap;
+                $("#mikauHealth").html("Health: " + mikau.hp);
+            };
+            if (mikau.hp <= 0) {
+                $("#mikauHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#link").click(function () {
@@ -122,7 +206,19 @@ $("#mikau").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             link.hp = link.hp - mikau.ap;
+            mikau.ap = mikau.ap + 7;
             $("#linkDefHealth").html("Health: " + link.hp);
+            if (link.hp <= 0) {
+                $("#linkDefend").hide(); 
+                link.ap = 0;
+            } else {
+                mikau.hp = mikau.hp - link.ap;
+                $("#mikauHealth").html("Health: " + mikau.hp);
+            };
+            if (mikau.hp <= 0) {
+                $("#mikauHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#bublin").click(function () {
@@ -133,7 +229,19 @@ $("#mikau").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             kingBublin.hp = kingBublin.hp - mikau.ap;
+            mikau.ap = mikau.ap + 7;
             $("#bublinDefHealth").html("Health: " + kingBublin.hp);
+            if (kingBublin.hp <= 0) {
+                $("#bublinDefend").hide(); 
+                kingBublin.ap = 0;
+            } else {
+                mikau.hp = mikau.hp - kingBublin.ap;
+                $("#mikauHealth").html("Health: " + mikau.hp);
+            };
+            if (mikau.hp <= 0) {
+                $("#mikauHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
 });
@@ -151,7 +259,19 @@ $("#bublin").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             sheik.hp = sheik.hp - kingBublin.ap;
+            kingBublin.ap = kingBublin.ap + 10;
             $("#sheikDefHealth").html("Health: " + sheik.hp);
+            if (sheik.hp <= 0) {
+                $("#sheikDefend").hide(); 
+                sheik.ap = 0;
+            } else {
+                kingBublin.hp = kingBublin.hp - sheik.ap;
+                $("#bublinHealth").html("Health: " + kingBublin.hp);
+            };
+            if (kingBublin.hp <= 0) {
+                $("#bublinHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#link").click(function () {
@@ -162,7 +282,19 @@ $("#bublin").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             link.hp = link.hp - kingBublin.ap;
+            kingBublin.ap = kingBublin.ap + 10;
             $("#linkDefHealth").html("Health: " + link.hp);
+            if (link.hp <= 0) {
+                $("#linkDefend").hide(); 
+                link.ap = 0;
+            } else {
+                kingBublin.hp = kingBublin.hp - link.ap;
+                $("#bublinHealth").html("Health: " + kingBublin.hp);
+            };
+            if (kingBublin.hp <= 0) {
+                $("#bublinHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
     $("#mikau").click(function () {
@@ -173,14 +305,28 @@ $("#bublin").click(function () {
         $(".lead").html("FIGHT!");
         $("#attack-btn").click(function() {
             mikau.hp = mikau.hp - kingBublin.ap;
+            kingBublin.ap = kingBublin.ap + 10;
             $("#mikauDefHealth").html("Health: " + mikau.hp);
+            if (mikau.hp <= 0) {
+                $("#mikauDefend").hide(); 
+                mikau.ap = 0;
+            } else {
+                kingBublin.hp = kingBublin.hp - mikau.ap;
+                $("#bublinHealth").html("Health: " + kingBublin.hp);
+            };
+            if (kingBublin.hp <= 0) {
+                $("#bublinHealth").html("LOSER!");
+                $("#clear-btn").show();
+            }
         });
     });
 });
 
+
+
 // assign an attack button feature to subract players attack power form their hp
 // when opponent! attacks, subtract their ap from your hp
-// if opponent! hp <= 0, select another opponent!
+// if opponent! hp <= 0, hide and select another opponent!
 // if your hp <= 0, show text "you lose", reset button appears
 // if no opponents left, show text "you win", reset button appears
 // assign a reset function to reset button
