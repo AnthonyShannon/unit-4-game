@@ -9,3 +9,9 @@
     height: 175px;
     padding-top: 25px;
 }
+body {
+    background: url(../images/hyrule-2.png);
+}
+.card {
+    background: none;
+}

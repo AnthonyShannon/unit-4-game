@@ -9,14 +9,11 @@ $('#mikauDefend').hide();
 $('#bublinAttack').hide();
 $('#bublinDefend').hide();
 
-// Define variables (hp, ap, and counter attack power)
-// Set characters as objects
-var link = { hp: 100, ap: 8, counterAttackPower: 10 };
-var sheik = { hp: 120, ap: 10, counterAttackPower: 8 };
+var link = { hp: 100, ap: 8, counterAttackPower: 14 };
+var sheik = { hp: 120, ap: 10, counterAttackPower: 12 };
 var mikau = { hp: 80, ap: 7, counterAttackPower: 10 };
-var kingBublin = { hp: 130, ap: 10, counterAttackPower: 11 };
-// In the objects (characters), assign values to the hp and ap vars
-// For objects, assign "on click animation" to move that character to the battle area.
+var kingBublin = { hp: 130, ap: 10, counterAttackPower: 20 };
+
 $("#link").click(function () {
     $(this).hide();
     $("#linkAttack").show();
@@ -37,7 +34,7 @@ $("#link").click(function () {
             $("#sheikDefend").hide(); 
             sheik.ap = 0;
         } else {
-            link.hp = link.hp - sheik.ap;
+            link.hp = link.hp - sheik.counterAttackPower;
             $("#linkHealth").html("Health: " + link.hp);
         }
         if (link.hp <= 0) {
@@ -60,7 +57,7 @@ $("#link").click(function () {
                 $("#bublinDefend").hide();
                 kingBublin.ap = 0; 
             } else {
-                link.hp = link.hp - kingBublin.ap;
+                link.hp = link.hp - kingBublin.counterAttackPower;
                 $("#linkHealth").html("Health: " + link.hp);
             }
             if (link.hp <= 0) {
@@ -83,7 +80,7 @@ $("#link").click(function () {
                 $("#mikauDefend").hide(); 
                 mikau.ap = 0
             } else {
-                link.hp = link.hp - mikau.ap;
+                link.hp = link.hp - mikau.counterAttackPower;
                 $("#linkHealth").html("Health: " + link.hp);
             }
             if (link.hp <= 0) {
@@ -113,7 +110,7 @@ $("#sheik").click(function () {
                 $("#linkDefend").hide();
                 linkk.ap = 0;
             } else {
-                sheik.hp = sheik.hp - link.ap;
+                sheik.hp = sheik.hp - link.counterAttackPower;
                 $("#sheikHealth").html("Health: " + sheik.hp);
             }
             if (sheik.hp <= 0) {
@@ -136,7 +133,7 @@ $("#sheik").click(function () {
                 $("#bublinDefend").hide();
                 bublin.ap = 0;
             } else {
-                sheik.hp = sheik.hp - kingBublin.ap;
+                sheik.hp = sheik.hp - kingBublin.counterAttackPower;
                 $("#sheikHealth").html("Health: " + sheik.hp);
             }
             if (sheik.hp <= 0) {
@@ -159,7 +156,7 @@ $("#sheik").click(function () {
                 $("#mikauDefend").hide();
                 mikau.ap = 0;
             } else {
-                sheik.hp = sheik.hp - mikau.ap;
+                sheik.hp = sheik.hp - mikau.counterAttackPower;
                 $("#sheikHealth").html("Health: " + sheik.hp);
             }
             if (sheik.hp <= 0) {
@@ -189,7 +186,7 @@ $("#mikau").click(function () {
                 $("#sheikDefend").hide(); 
                 sheik.ap = 0;
             } else {
-                mikau.hp = mikau.hp - sheik.ap;
+                mikau.hp = mikau.hp - sheik.counterAttackPower;
                 $("#mikauHealth").html("Health: " + mikau.hp);
             };
             if (mikau.hp <= 0) {
@@ -212,7 +209,7 @@ $("#mikau").click(function () {
                 $("#linkDefend").hide(); 
                 link.ap = 0;
             } else {
-                mikau.hp = mikau.hp - link.ap;
+                mikau.hp = mikau.hp - link.counterAttackPower;
                 $("#mikauHealth").html("Health: " + mikau.hp);
             };
             if (mikau.hp <= 0) {
@@ -235,7 +232,7 @@ $("#mikau").click(function () {
                 $("#bublinDefend").hide(); 
                 kingBublin.ap = 0;
             } else {
-                mikau.hp = mikau.hp - kingBublin.ap;
+                mikau.hp = mikau.hp - kingBublin.counterAttackPower;
                 $("#mikauHealth").html("Health: " + mikau.hp);
             };
             if (mikau.hp <= 0) {
@@ -265,7 +262,7 @@ $("#bublin").click(function () {
                 $("#sheikDefend").hide(); 
                 sheik.ap = 0;
             } else {
-                kingBublin.hp = kingBublin.hp - sheik.ap;
+                kingBublin.hp = kingBublin.hp - sheik.counterAttackPower;
                 $("#bublinHealth").html("Health: " + kingBublin.hp);
             };
             if (kingBublin.hp <= 0) {
@@ -288,7 +285,7 @@ $("#bublin").click(function () {
                 $("#linkDefend").hide(); 
                 link.ap = 0;
             } else {
-                kingBublin.hp = kingBublin.hp - link.ap;
+                kingBublin.hp = kingBublin.hp - link.counterAttackPower;
                 $("#bublinHealth").html("Health: " + kingBublin.hp);
             };
             if (kingBublin.hp <= 0) {
@@ -311,7 +308,7 @@ $("#bublin").click(function () {
                 $("#mikauDefend").hide(); 
                 mikau.ap = 0;
             } else {
-                kingBublin.hp = kingBublin.hp - mikau.ap;
+                kingBublin.hp = kingBublin.hp - mikau.counterAttackPower;
                 $("#bublinHealth").html("Health: " + kingBublin.hp);
             };
             if (kingBublin.hp <= 0) {
@@ -322,12 +319,6 @@ $("#bublin").click(function () {
     });
 });
 
-
-
-// assign an attack button feature to subract players attack power form their hp
-// when opponent! attacks, subtract their ap from your hp
-// if opponent! hp <= 0, hide and select another opponent!
-// if your hp <= 0, show text "you lose", reset button appears
-// if no opponents left, show text "you win", reset button appears
-// assign a reset function to reset button
-
+$("#clear-btn").click(function () {
+    location.reload();
+});
